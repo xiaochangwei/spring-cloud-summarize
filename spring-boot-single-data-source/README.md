@@ -1,7 +1,6 @@
-#spring-boot-single-data-source
-<br/>
-常见springboot使用方式整理
-<br/><br/><br/><br/>
+#spring-boot-single-data-source<br/>
+常见springboot使用方式整理<br/>
+<br/><br/>
 1.构建项目<br/>
 2.单数据源(mysql)场景下jpa，mybatis使用及事务控制<br/>
 3.统一结果处理<br/>
@@ -16,6 +15,6 @@
 
 
 <br/><br/><br/><br/>
-后续会加入更多spring boot、cloud相关知识，逐步更新中...
-<br/>https://github.com/xiaochangwei
-<br/>https://www.cnblogs.com/xiaochangwei
+后续会加入更多spring boot、cloud相关知识，逐步更新中...<br/>
+https://github.com/xiaochangwei<br/>
+https://www.cnblogs.com/xiaochangwei<br/>
