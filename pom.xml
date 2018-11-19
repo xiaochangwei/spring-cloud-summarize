@@ -9,6 +9,7 @@
     <version>2.1.0</version>
     <modules>
         <module>spring-boot-single-data-source</module>
+        <module>summarize-common-tools</module>
     </modules>
     <packaging>pom</packaging>
 

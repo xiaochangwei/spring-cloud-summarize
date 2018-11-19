@@ -20,3 +20,5 @@ ${AnsiColor.BRIGHT_YELLOW}
                    `=---='
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
          佛祖保佑            永无BUG
+
+接口地址：http://部署机器ip:9001/app1/swagger-ui.html

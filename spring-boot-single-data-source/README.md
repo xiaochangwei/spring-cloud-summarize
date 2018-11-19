@@ -1,10 +1,6 @@
-#spring-cloud-summarize
+#spring-boot-single-data-source
 #####powerd by changw.xiao@qq.com
 <br/><br/>
-对spring boot、spring cloud中常用的技术做一个简单的整理
-<br/><br/>
-#已包含下列内容（持续更新....）
-#####2018-11-19 
 1.构建项目<br/>
 2.单数据源(mysql)场景下jpa，mybatis使用及事务控制<br/>
 3.统一结果处理<br/>
@@ -13,6 +9,8 @@
 6.redis使用<br/>
 7.参数验证<br/>
 8.错误信息国际化<br/>
+
+其中，用于测试的数据和postman导出脚本在resources/测试目录下，以便快速测试<br/>
 
 
 <br/><br/>

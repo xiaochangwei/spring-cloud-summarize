@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "accdd577-3ff0-42fb-a43d-6319e0a37ed5",
+		"name": "cn.xiaochangwei.summarize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "单数据源",
+			"item": [
+				{
+					"name": "国际化测试",
+					"item": [
+						{
+							"name": "参数验证错误提示国际化",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "{{Accept-Language}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "zh-cn",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://{{ip}}:9001/app1/internationalization/param/valid?",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "9001",
+									"path": [
+										"app1",
+										"internationalization",
+										"param",
+										"valid"
+									],
+									"query": [
+										{
+											"key": "account",
+											"value": "xiaochangwei",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "jpa测试",
+					"item": [
+						{
+							"name": "分页获取数据",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "{{Accept-Language}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "zh-cn",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://{{ip}}:9001/app1/jpa/pageable?pn=0",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "9001",
+									"path": [
+										"app1",
+										"jpa",
+										"pageable"
+									],
+									"query": [
+										{
+											"key": "pn",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "根据年龄地区获取数据",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "{{Accept-Language}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "zh-cn",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://{{ip}}:9001/app1/jpa/normal?age=20",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "9001",
+									"path": [
+										"app1",
+										"jpa",
+										"normal"
+									],
+									"query": [
+										{
+											"key": "age",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "事务测试",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "{{Accept-Language}}"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "zh-cn",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://{{ip}}:9001/app1/jpa/trasactional?account=trasactional",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "9001",
+									"path": [
+										"app1",
+										"jpa",
+										"trasactional"
+									],
+									"query": [
+										{
+											"key": "account",
+											"value": "trasactional"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "mybatis测试",
+					"item": [
+						{
+							"name": "mybatis查询测试",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "{{Accept-Language}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "zh-cn",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://{{ip}}:9001/app1/mybatis/query?account=xiaochangwei",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "9001",
+									"path": [
+										"app1",
+										"mybatis",
+										"query"
+									],
+									"query": [
+										{
+											"key": "account",
+											"value": "xiaochangwei"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mybatis事务测试",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "{{Accept-Language}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "zh-cn",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://{{ip}}:9001/app1/mybatis/trasactional",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "9001",
+									"path": [
+										"app1",
+										"mybatis",
+										"trasactional"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "redis测试",
+					"item": [
+						{
+							"name": "redis测试",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "{{Accept-Language}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "zh-cn",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://{{ip}}:9001/app1/redis/test",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "9001",
+									"path": [
+										"app1",
+										"redis",
+										"test"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
