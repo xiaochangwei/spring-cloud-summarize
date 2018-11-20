@@ -1,0 +1,16 @@
+server:
+  port: 9091
+#  servlet:
+#    context-path: /eureka   #这里不能和serviceUrl最后的路径完全一样，否则client不能注册进来
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:9092/eureka/,http://${eureka.instance.hostname}:9093/eureka/
+      defaultZone: http://${eureka.instance.hostname}:9091/eureka/,http://${eureka.instance.hostname}:9092/eureka/,http://${eureka.instance.hostname}:9093/eureka/
+  healthcheck:
+      enabled: true
+  registry-fetch-interval-seconds: 1 #从Eureka服务器获取注册信息间隔时间 默认 30s
+  instance:
+    hostname: eureka-cluser-9091
+    lease-renewal-interval-in-seconds:  1 #租期更新时间间隔 默认 30s
+    lease-expiration-duration-in-seconds: 5 #租期到期时间 默认 90s #经测试，注册中心清理时间为该值*2（清理间隔为1s情况下）

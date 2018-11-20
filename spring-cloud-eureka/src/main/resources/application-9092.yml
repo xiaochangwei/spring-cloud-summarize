@@ -1,0 +1,11 @@
+server:
+  port: 9092
+#  servlet:
+#    context-path: /eureka   #这里不能和serviceUrl最后的路径完全一样，否则client不能注册进来
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:9091/eureka/,http://${eureka.instance.hostname}:9093/eureka/
+    defaultZone: http://${eureka.instance.hostname}:9091/eureka/,http://${eureka.instance.hostname}:9092/eureka/,http://${eureka.instance.hostname}:9093/eureka/
+  instance:
+    hostname: eureka-cluser-9092
