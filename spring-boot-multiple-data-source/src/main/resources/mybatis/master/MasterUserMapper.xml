@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.xiaochangwei.summarize.multiple.dao.mybatis.master.MasterUserMapper">
+
+    <select id="findByCondition" resultType="cn.xiaochangwei.summarize.multiple.entity.User">
+        SELECT
+        id,
+        idcard AS IDCard,
+        account,
+        age,
+        born_date AS bornDate,
+        `password`,
+        province_code AS provinceCode
+        FROM `t_user`
+        <where>
+            <if test="account != null and account !=''">
+                AND account = #{account}
+            </if>
+            <if test="IDCard != null and IDCard !=''">
+                AND idcard = #{IDCard}
+            </if>
+        </where>
+    </select>
+
+    <select id="findByAccount" resultType="cn.xiaochangwei.summarize.multiple.entity.User">
+        SELECT
+            id,
+            idcard AS IDCard,
+            account,
+            age,
+            born_date AS bornDate,
+            `password`,
+            province_code AS provinceCode
+        FROM
+            `t_user` WHERE account = #{account}
+    </select>
+
+    <update id="updatePassword">
+        UPDATE `t_user` set password = #{password} where id = #{id}
+    </update>
+</mapper>

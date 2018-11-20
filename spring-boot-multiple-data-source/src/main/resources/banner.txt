@@ -1,0 +1,24 @@
+
+${AnsiColor.BRIGHT_YELLOW}
+                   ${AnsiColor.BRIGHT_RED}_ooOoo_${AnsiColor.BRIGHT_YELLOW}
+                  ${AnsiColor.BRIGHT_RED}o8888888o${AnsiColor.BRIGHT_YELLOW}
+                  ${AnsiColor.BRIGHT_RED}88${AnsiColor.BRIGHT_YELLOW}" . "${AnsiColor.BRIGHT_RED}88${AnsiColor.BRIGHT_YELLOW}
+                  (| -_- |)
+                  O\  =  /O
+               ____/`---'\____
+             .'  \\|     |//  `.
+            /  \\|||  :  |||//  \
+           /  _||||| -:- |||||-  \
+           |   | \\\  -  /// |   |
+           | \_|  ''\---/''  |   |
+           \  .-\__  `-`  ___/-. /
+         ___`. .'  /--.--\  `. . __
+      ."" '<  `.___\_<|>_/___.'  >'"".
+     | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+     \  \ `-.   \_ __\ /__ _/   .-` /  /
+======`-.____`-.___\_____/___.-`____.-'======
+                   `=---='
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         佛祖保佑            永无BUG
+
+接口地址：http://部署机器ip:9002/app1/swagger-ui.html

@@ -1,0 +1,66 @@
+server:
+  port: 9002
+  servlet:
+    context-path: /app2
+spring:
+  application:
+    name: app2
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    master:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/xiaochangwei_summarize_01?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+      username: root
+      password: 123456
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        pool-name: XIAOCHANGWEI-APP2-HIKARICP-POOL
+        minimum-idle: 5
+        maximum-pool-size: 15
+        auto-commit: true
+        idle-timeout: 30000
+        max-lifetime: 1800000
+        connection-timeout: 30000
+        connection-test-query: SELECT 1
+    slave:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/xiaochangwei_summarize_02?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+      username: root
+      password: 123456
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        pool-name: XIAOCHANGWEI-APP2-HIKARICP-POOL
+        minimum-idle: 5
+        maximum-pool-size: 15
+        auto-commit: true
+        idle-timeout: 30000
+        max-lifetime: 1800000
+        connection-timeout: 30000
+        connection-test-query: SELECT 1
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    database: mysql
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+mybatis:
+  mapper-locations: classpath:mybatis/*Mapper.xml
+logging:
+  level:
+    root: info
+    com.zaxxer: debug
+    cn.xiaochangwei.summarize.multiple.dao: debug
+    cn.xiaochangwei.summarize.multiple.controller: debug
+
+####################### 变量配置 #######################
+config:
+  swagger2:
+    enable: true
