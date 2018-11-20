@@ -2,7 +2,7 @@ package cn.xiaochangwei.summarize.single.controller;
 
 import cn.xiaochangwei.summarize.common.vo.Result;
 import cn.xiaochangwei.summarize.single.entity.User;
-import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -19,6 +19,7 @@ import java.util.UUID;
  **/
 @RestController
 @RequestMapping("/redis")
+@Slf4j
 public class RedisTestController {
 
     @Autowired
@@ -35,8 +36,7 @@ public class RedisTestController {
             user.setId(Long.valueOf(i));
             user.setAccount(UUID.randomUUID().toString());
             redisTemplate.opsForList().leftPush("userList", user);
-            System.err.println(JSON.toJSONString(redisTemplate.opsForList().index("userList", i)));
-            System.out.println(redisTemplate.opsForList().size("userList"));
+            log.info("size {}", redisTemplate.opsForList().size("userList"));
         }
         return new Result(redisTemplate.opsForList().range("userList", 0, Integer.MAX_VALUE));
     }

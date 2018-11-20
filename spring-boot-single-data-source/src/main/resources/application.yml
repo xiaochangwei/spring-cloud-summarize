@@ -50,6 +50,7 @@ mybatis:
 logging:
   level:
     root: info
+    com.zaxxer: debug
     cn.xiaochangwei.summarize.single.dao: debug
     cn.xiaochangwei.summarize.single.controller: debug
 
