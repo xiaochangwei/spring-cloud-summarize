@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: eureka-cluster
+--- #注意这里是三个减号
+spring:
+  profiles: cluster-9091
+#  security:
+#    user:
+#      name: admin
+#      password: 123123
+server:
+  port: 9091
+eureka:
+  instance:
+#    hostname: eureka-cluster-01 #为了能直接从eureka列表直接点击跳转，取消此项配置
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 5
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9092/eureka/,http://localhost:9093/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 1
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 1000
+--- #注意这里是三个减号
+spring:
+  profiles: cluster-9092
+#  security:
+#    user:
+#      name: admin
+#      password: 123123
+server:
+  port: 9092
+eureka:
+  instance:
+#    hostname: eureka-cluster-02 #为了能直接从eureka列表直接点击跳转，取消此项配置
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 5
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/,http://localhost:9093/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 1000
+--- #注意这里是三个减号
+spring:
+  profiles: cluster-9093
+#  security:
+#    user:
+#      name: admin
+#      password: 123123
+server:
+  port: 9093
+eureka:
+  instance:
+#    hostname: eureka-cluster-03 #为了能直接从eureka列表直接点击跳转，取消此项配置
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 5
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/,http://localhost:9092/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 1000

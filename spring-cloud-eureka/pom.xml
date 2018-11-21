@@ -34,4 +34,44 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <!--#打包命令 mvn clean package -Pcluster-9091 -U-->
+    <profiles>
+        <profile>
+            <id>single</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profileActive>single</profileActive>
+            </properties>
+        </profile>
+        <profile>
+            <id>cluster-9091</id>
+            <properties>
+                <profileActive>cluster-9091</profileActive>
+            </properties>
+        </profile>
+        <profile>
+            <id>cluster-9092</id>
+            <properties>
+                <profileActive>cluster-9092</profileActive>
+            </properties>
+        </profile>
+        <profile>
+            <id>cluster-9093</id>
+            <properties>
+                <profileActive>cluster-9093</profileActive>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

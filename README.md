@@ -7,6 +7,8 @@ spring-cloud-summarize
 1.构建项目spring-cloud-eureka   
 2.增加注册中心，单节点、多节点两种配置  
 3.spring-boot-single-data-source 接入eureka 单节点&集群  
+4.spring-boot-multiple-data-source 接入eureka 单节点&集群  
+5.增加Feign  
   
   
 *******************************************************  

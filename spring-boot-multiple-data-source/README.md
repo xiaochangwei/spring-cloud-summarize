@@ -1,11 +1,15 @@
-#spring-boot-multiple-data-source  
+spring-boot-multiple-data-source  
 spring boot 多数据源使用
   
     
 1.多数据源(mysql)场景下jpa，mybatis使用及事务控制  
-3.统一结果处理  
-4.统一异常处理  
-5.swagger2接口管理  
+2.统一结果处理  
+3.统一异常处理  
+4.swagger2接口管理  
+5.注册到eureka   
+6.增加Feign  
+
+  
  
 
 其中，用于测试的数据和postman导出脚本在resources/测试目录下，以便快速测试  

@@ -12,6 +12,7 @@ spring-boot-single-data-source
 8.错误信息国际化  
 9.统一跨域处理  
 10.接入eureka  
+11.增加Feign  
   
 其中，用于测试的数据和postman导出脚本在resources/测试目录下，以便快速测试  
 
