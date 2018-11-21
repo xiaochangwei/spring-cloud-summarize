@@ -1,0 +1,18 @@
+server:
+  port: 9099
+#  servlet:
+#    context-path: /eureka   #这里不能和serviceUrl最后的路径完全一样，否则client不能注册进来
+spring:
+  application:
+    name: eureka
+eureka:
+  instance:
+    hostname: eureka-server
+  server:
+    enable-self-preservation: false #关闭自我保护，生产环境应该设置为true
+    eviction-interval-timer-in-ms: 1000 #清理间隔 默认 60*1000 ms  evict task
+  client:
+    register-with-eureka: false #不需要自己向自己注册 默认为true
+    fetch-registry: false #不需要检索服务 默认为true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

@@ -1,7 +1,14 @@
-#spring-cloud-summarize  
+spring-cloud-summarize  
 对spring boot、spring cloud中常用的技术做一个简单的整理  
   
 已包含下列内容（持续更新....）  
+*******************************************************  
+2018-11-21  
+1.构建项目spring-cloud-eureka   
+2.增加注册中心，单节点、多节点两种配置  
+3.spring-boot-single-data-source 接入eureka 单节点&集群  
+  
+  
 *******************************************************  
 2018-11-20  
 1.构建项目spring-boot-multiple-data-source   
