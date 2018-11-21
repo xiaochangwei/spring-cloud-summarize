@@ -1,6 +1,9 @@
 package cn.xiaochangwei.summarize.single.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -17,7 +20,10 @@ import java.util.Date;
         @UniqueConstraint(columnNames = {"IDCard"})
 })
 @Data
-public class User implements Serializable{
+@NoArgsConstructor
+//@JsonIgnoreProperties({"hibernateLazyInitializer"})
+@Lazy(value = false)
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -36,6 +36,10 @@ public class JpaTestController {
 
     @GetMapping("/normal")
     public Result getData(@RequestParam(name = "age", required = false, defaultValue = "0") Integer age, @RequestParam(name = "provinceCode", required = false, defaultValue = "51") String provinceCode) {
+//        return new Result(userRepository.getOne(1L));
+        //jpa2中使用getOne时，会报错，原因是getOne返回的是代理对象，在转为对象时，session已经关闭，而部分延迟加载的内容无法获取就报错，可以在entity上加@JsonIgnoreProperties({"hibernateLazyInitializer"})解决https://blog.csdn.net/xiewz1112/article/details/83338179
+        //但是并不可取，应该用findById进行相关操作
+
         return new Result(userRepository.findAllByAgeGreaterThanAndProvinceCodeOrderByAccountAscProvinceCodeDesc(age, provinceCode));
     }
 
