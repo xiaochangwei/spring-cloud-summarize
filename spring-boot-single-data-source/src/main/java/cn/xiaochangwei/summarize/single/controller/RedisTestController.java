@@ -40,4 +40,12 @@ public class RedisTestController {
         }
         return new Result(redisTemplate.opsForList().range("userList", 0, Integer.MAX_VALUE));
     }
+
+    @GetMapping("/test2")
+    public Result redisTestKey() {
+        stringRedisTemplate.opsForValue().set("test.key1.key2.key3", UUID.randomUUID().toString());
+        return new Result();
+    }
+
+
 }
