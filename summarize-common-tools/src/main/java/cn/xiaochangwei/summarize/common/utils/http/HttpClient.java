@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * create by changw.xiao@qq.com at 2018/11/15 10:53
  **/
-@Component
+@Component(value = "xHttpClient")
 public class HttpClient<T, R> implements IHttpClinet<T, R> {
 
     private static final RestTemplate restTemplate = new RestTemplate(simpleClientHttpRequestFactory());

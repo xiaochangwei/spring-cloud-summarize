@@ -11,6 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 //import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * create by changw.xiao@qq.com at 2018/11/18 14:08
  **/

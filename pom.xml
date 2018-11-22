@@ -12,6 +12,7 @@
         <module>summarize-common-tools</module>
         <module>spring-boot-multiple-data-source</module>
         <module>spring-cloud-eureka</module>
+        <module>spring-cloud-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
