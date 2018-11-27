@@ -1,0 +1,62 @@
+server:
+  port: 9060
+spring:
+  application:
+    name: gateway
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  cloud:
+    gateway:
+      discovery:d
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      default-filters:
+      - name: RequestRateLimiter
+        args:
+          redis-rate-limiter.burstCapacity: 1 #令牌桶的容量，允许在一秒钟内完成的最大请求数  //TODO 用jemeter测试尚未达到预期效果，待研究
+          redis-rate-limiter.replenishRate: 1 #允许用户每秒处理多少个请求  //TODO 用jemeter测试尚未达到预期效果，待研究
+          rate-limiter: "#{@defaultRedisRateLimiter}"
+          key-resolver: "#{@apiKeyResolver}"
+      routes:
+      - id: app1
+        uri: lb://app1
+        predicates:
+        - Path=/aa/**
+        filters:
+        - StripPrefix=1
+#        - name: RequestRateLimiter
+#          args:
+#            redis-rate-limiter.replenishRate: 5  #令牌桶的容积
+#            redis-rate-limiter.burstCapacity: 10 #流速 每秒
+#            rate-limiter: "#{@defaultRedisRateLimiter}"
+#            key-resolver: "#{@remoteAddressKeyResolver}"
+      - id: app2
+        uri: lb://app2
+        predicates:
+        - Path=/bb/**
+        filters:
+        - StripPrefix=1 #去掉path前多少个/前内容
+        - PrefixPath=/jpa #自动在请求uri前加该前缀
+#  cloud:
+#    gateway:
+#      enabled: false
+###################### eureka ###########################
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://admin:123456@127.0.0.1:9090/eureka
+#      defaultZone: http://127.0.0.1:9091/eureka,http://127.0.0.1:9092/eureka,http://127.0.0.1:9093/eureka
+    registry-fetch-interval-seconds: 1 #从Eureka服务器获取注册信息间隔时间 默认 30s
+  instance:
+    lease-renewal-interval-in-seconds: 1 #租期更新时间间隔 默认 30s
+    lease-expiration-duration-in-seconds: 5 #租期到期时间 默认 90s #经测试，注册中心清理时间为该值*2（清理间隔为1s情况下）
+debug: false
+
