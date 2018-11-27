@@ -11,4 +11,6 @@ public interface IHttpClinet<T, R> {
     <R> R getObject(String url, Class<T> tClass, Class<R> rClass, String fieldName);
 
     <R> List<R> getObjectList(String url, Class<T> tClass, Class<R> rClass, String fieldName);
+
+    <R> R postObject(String url, Object param, Class<T> tClass, Class<R> rClass, String fieldName);
 }

@@ -21,6 +21,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -35,7 +39,7 @@
         </dependencies>
     </dependencyManagement>
 
-    <!--#打包命令 mvn clean package -Pcluster-9091 -U-->
+    <!--#打包命令 mvn clean package -P9091 -U-->
     <profiles>
         <profile>
             <id>single</id>
@@ -47,21 +51,21 @@
             </properties>
         </profile>
         <profile>
-            <id>cluster-9091</id>
+            <id>9091</id>
             <properties>
-                <profileActive>cluster-9091</profileActive>
+                <profileActive>9091</profileActive>
             </properties>
         </profile>
         <profile>
-            <id>cluster-9092</id>
+            <id>9092</id>
             <properties>
-                <profileActive>cluster-9092</profileActive>
+                <profileActive>9092</profileActive>
             </properties>
         </profile>
         <profile>
-            <id>cluster-9093</id>
+            <id>9093</id>
             <properties>
-                <profileActive>cluster-9093</profileActive>
+                <profileActive>9093</profileActive>
             </properties>
         </profile>
     </profiles>

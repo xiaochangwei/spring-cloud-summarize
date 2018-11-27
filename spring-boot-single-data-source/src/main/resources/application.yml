@@ -65,8 +65,11 @@ eureka:
     healthcheck:
       enabled: true
     service-url:
-      defaultZone: http://127.0.0.1:9090/eureka
-#      defaultZone: http://127.0.0.1:9091/eureka,http://127.0.0.1:9092/eureka,http://127.0.0.1:9093/eureka
+      defaultZone: http://admin:123456@127.0.0.1:9090/eureka
+#      defaultZone: http://admin:admin01@127.0.0.1:9091/eureka,http://admin:admin02@127.0.0.1:9092/eureka,http://admin:admin03errorpassword@127.0.0.1:9093/eureka
+      # 9093 密码错误，启动后 通过 9093/eureka 发现服务也注册上了，因为服务相互注册了
+      # 如果停掉9093以外的注册中心，发现服务也会消失，因为没有注册成功的服务来相互传递了
+#     defaultZone: http://127.0.0.1:9091/eureka,http://127.0.0.1:9092/eureka,http://127.0.0.1:9093/eureka
     registry-fetch-interval-seconds: 1 #从Eureka服务器获取注册信息间隔时间 默认 30s
   instance:
     lease-renewal-interval-in-seconds: 1 #租期更新时间间隔 默认 30s

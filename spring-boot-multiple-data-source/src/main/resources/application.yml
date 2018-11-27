@@ -71,8 +71,9 @@ eureka:
     healthcheck:
       enabled: true
     service-url:
-      defaultZone: http://127.0.0.1:9090/eureka
+      defaultZone: http://admin:123456@127.0.0.1:9090/eureka
 #      defaultZone: http://127.0.0.1:9091/eureka,http://127.0.0.1:9092/eureka,http://127.0.0.1:9093/eureka
+#      defaultZone: http://admin:admin01@127.0.0.1:9091/eureka,http://admin:admin02@127.0.0.1:9092/eureka,http://admin:admin03@127.0.0.1:9093/eureka
     registry-fetch-interval-seconds: 1 #从Eureka服务器获取注册信息间隔时间 默认 30s
   instance:
     lease-renewal-interval-in-seconds: 1 #租期更新时间间隔 默认 30s

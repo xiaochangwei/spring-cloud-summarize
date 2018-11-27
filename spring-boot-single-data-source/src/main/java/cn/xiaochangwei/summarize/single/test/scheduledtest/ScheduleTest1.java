@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class ScheduleTest1 {
 
     //经测试，@Scheduled在项目启动时会执行一次，如果执行中报错不影响项目正常启动，且多个任务之间(同一个类或非同一个类中)通过@Order去改变顺序没实际影响
-    @Scheduled(fixedRate = 10* 60 * 1000)
+    @Scheduled(fixedRate = 10 * 60 * 1000)
     @Order(value = 20)
     public void scheduleTask() {
         log.info("scheduleTask begin running...");
@@ -22,7 +22,7 @@ public class ScheduleTest1 {
         log.info("scheduleTask stopped");
     }
 
-    @Scheduled(fixedRate = 60 * 1000)
+    @Scheduled(fixedRate = 10 * 60 * 1000)
     @Order(value = 19)
     public void scheduleTask3() {
         log.info("scheduleTask3 begin running...");

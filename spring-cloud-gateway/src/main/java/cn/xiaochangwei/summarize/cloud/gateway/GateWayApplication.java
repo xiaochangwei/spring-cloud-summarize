@@ -15,11 +15,9 @@ import org.springframework.context.annotation.Configuration;
  * create by changw.xiao@qq.com at 2018/11/18 14:08
  **/
 
-//@ComponentScan(basePackages = {"cn.xiaochangwei.summarize.cloud.gateway", "cn.xiaochangwei.summarize.common"})
+//@ComponentScan(basePackages = {"cn.xiaochangwei.summarize.cloud.gateway", "cn.xiaochangwei.summarize.common.exception"})
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableAutoConfiguration
-//@Configuration
 public class GateWayApplication {
 //
 //    @Bean

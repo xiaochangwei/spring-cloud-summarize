@@ -47,5 +47,11 @@ public class RedisTestController {
         return new Result();
     }
 
+    @GetMapping("/test3")
+    public Result redisTestKey3() {
+        stringRedisTemplate.opsForValue().set("中文key", UUID.randomUUID().toString());
+        return new Result();
+    }
+
 
 }

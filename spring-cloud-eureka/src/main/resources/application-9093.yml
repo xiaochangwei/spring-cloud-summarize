@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eureka-cluster
+  security:
+    user:
+      name: admin
+      password: admin03
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 5
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin01@localhost:9091/eureka/,http://admin:admin02@localhost:9092/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 1
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 1000
+server:
+  port: 9093

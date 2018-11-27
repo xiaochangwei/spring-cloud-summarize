@@ -30,6 +30,18 @@ public class Result<T> implements Serializable {
         this(status, null, error);
     }
 
+    public static Result success() {
+        return success(null);
+    }
+
+    public static Result success(Object data) {
+        return new Result(data);
+    }
+
+    public static Result fail(Integer status, String errorMessage) {
+        return new Result(status, errorMessage);
+    }
+
     public Integer getStatus() {
         return status;
     }
