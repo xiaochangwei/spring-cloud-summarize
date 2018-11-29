@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
  * create by changw.xiao@qq.com at 2018/11/13 14:08
  **/
 @RestControllerAdvice
-@ControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
