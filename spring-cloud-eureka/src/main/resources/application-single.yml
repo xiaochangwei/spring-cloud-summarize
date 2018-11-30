@@ -19,4 +19,4 @@ eureka:
     register-with-eureka: false #不需要自己向自己注册 默认为true
     fetch-registry: false #不需要检索服务 默认为true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:${server.port}/eureka/

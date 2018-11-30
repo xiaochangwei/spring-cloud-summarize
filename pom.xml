@@ -13,6 +13,7 @@
         <module>spring-boot-multiple-data-source</module>
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-gateway</module>
+        <module>spring-cloud-config-server</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -60,5 +61,16 @@
             </snapshots>
         </repository>
     </repositories>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

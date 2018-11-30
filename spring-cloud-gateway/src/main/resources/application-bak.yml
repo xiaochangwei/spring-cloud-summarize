@@ -12,7 +12,7 @@ spring:
     add-mappings: false
   cloud:
     gateway:
-      discovery:d
+      discovery:
         locator:
           enabled: true
           lower-case-service-id: true
@@ -58,5 +58,4 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 1 #租期更新时间间隔 默认 30s
     lease-expiration-duration-in-seconds: 5 #租期到期时间 默认 90s #经测试，注册中心清理时间为该值*2（清理间隔为1s情况下）
-debug: false
 
