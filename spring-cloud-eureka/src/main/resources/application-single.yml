@@ -9,14 +9,18 @@ spring:
     user:
       name: admin
       password: 123456
+###################### eureka ###########################
 eureka:
   instance:
     hostname: eureka-server
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
   server:
     enable-self-preservation: false #关闭自我保护，生产环境应该设置为true
     eviction-interval-timer-in-ms: 1000 #清理间隔 默认 60*1000 ms  evict task
   client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.ip-address}:${server.port}/eureka/
     register-with-eureka: false #不需要自己向自己注册 默认为true
     fetch-registry: false #不需要检索服务 默认为true
-    serviceUrl:
-      defaultZone: http://localhost:${server.port}/eureka/
+

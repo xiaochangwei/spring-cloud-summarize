@@ -2,12 +2,12 @@ spring:
   cloud:
     config:
       name: gateway
-      profile: test
-      label: master
-#      fail-fast: true
+      profile: test2
+      fail-fast: true
       discovery:
         enabled: true
         service-id: config-server
+###################### eureka ###########################
 eureka:
   client:
     healthcheck:
@@ -19,9 +19,4 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 1 #租期更新时间间隔 默认 30s
     lease-expiration-duration-in-seconds: 5 #租期到期时间 默认 90s #经测试，注册中心清理时间为该值*2（清理间隔为1s情况下）
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: *
 

@@ -6,19 +6,24 @@ spring:
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/xiaochangwei/spring-cloud-config-repo
-#      label: master
-#          search-paths: spring-cloud-config-server/config
-          force-pull: true
-#          basedir: /
+#        git:
+#          uri: https://github.com/xiaochangwei/spring-cloud-config-repo
+#          force-pull: true
+##          search-paths: configs/ymls
+#          basedir: D:\data\config
+        native:
+          search-locations: D:/data/config
+  profiles:
+    active: native
+
+
 ###################### eureka ###########################
 eureka:
   client:
     healthcheck:
       enabled: true
     service-url:
-      defaultZone: http://admin:123456@localhost:9090/eureka
+      defaultZone: http://admin:123456@127.0.0.1:9090/eureka
 #      defaultZone: http://127.0.0.1:9091/eureka,http://127.0.0.1:9092/eureka,http://127.0.0.1:9093/eureka
     registry-fetch-interval-seconds: 1 #从Eureka服务器获取注册信息间隔时间 默认 30s
   instance:
