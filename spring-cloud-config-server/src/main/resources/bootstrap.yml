@@ -9,13 +9,26 @@ spring:
 #        git:
 #          uri: https://github.com/xiaochangwei/spring-cloud-config-repo
 #          force-pull: true
-##          search-paths: configs/ymls
-#          basedir: D:\data\config
+#          search-paths: /**
+#          basedir: D:\data\config2
+#          default-label: master
         native:
           search-locations: D:/data/config
   profiles:
     active: native
-
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+      refresh:
+        enabled: true
+#  rabbitmq:
+#    host: 192.168.199.186
+#    port: 5672
+#    username: wis
+#    password: 123456
+#    publisher-confirms: true
+#    virtual-host: /
 
 ###################### eureka ###########################
 eureka:
@@ -25,7 +38,15 @@ eureka:
     service-url:
       defaultZone: http://admin:123456@127.0.0.1:9090/eureka
 #      defaultZone: http://127.0.0.1:9091/eureka,http://127.0.0.1:9092/eureka,http://127.0.0.1:9093/eureka
-    registry-fetch-interval-seconds: 1 #从Eureka服务器获取注册信息间隔时间 默认 30s
+    registry-fetch-interval-seconds: 10 #从Eureka服务器获取注册信息间隔时间 默认 30s
   instance:
-    lease-renewal-interval-in-seconds: 1 #租期更新时间间隔 默认 30s
-    lease-expiration-duration-in-seconds: 5 #租期到期时间 默认 90s #经测试，注册中心清理时间为该值*2（清理间隔为1s情况下）
+    lease-renewal-interval-in-seconds: 10 #租期更新时间间隔 默认 30s
+    lease-expiration-duration-in-seconds: 50 #租期到期时间 默认 90s #经测试，注册中心清理时间为该值*2（清理间隔为1s情况下）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      cors:
+        allowed-origins: '*'
+        allowed-methods: '*'

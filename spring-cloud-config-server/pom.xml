@@ -22,12 +22,6 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>cn.xiaochangwei.summarize</groupId>-->
-            <!--<artifactId>summarize-common-tools</artifactId>-->
-            <!--<version>2.1.0</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -36,10 +30,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-bus-amqp</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-config-monitor</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <dependencyManagement>

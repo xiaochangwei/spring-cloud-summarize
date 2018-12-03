@@ -17,7 +17,7 @@ eureka:
     prefer-ip-address: true
   server:
     enable-self-preservation: false #关闭自我保护，生产环境应该设置为true
-    eviction-interval-timer-in-ms: 1000 #清理间隔 默认 60*1000 ms  evict task
+    eviction-interval-timer-in-ms: 10000 #清理间隔 默认 60*1000 ms  evict task
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.ip-address}:${server.port}/eureka/
