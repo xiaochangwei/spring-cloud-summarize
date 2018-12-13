@@ -1,6 +1,8 @@
 package cn.xiaochangwei.summarize.common.vo;
 
 
+import cn.xiaochangwei.summarize.common.exception.ErrorType;
+
 import java.io.Serializable;
 
 /**
@@ -40,6 +42,10 @@ public class Result<T> implements Serializable {
 
     public static Result fail(Integer status, String errorMessage) {
         return new Result(status, errorMessage);
+    }
+
+    public static Result fail(ErrorType type) {
+        return new Result(Integer.valueOf(type.getCode()), type.getMesg());
     }
 
     public Integer getStatus() {

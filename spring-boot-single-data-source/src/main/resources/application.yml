@@ -45,6 +45,10 @@ spring:
         min-idle: 0
         max-idle: 10
     timeout: 1000
+  data:
+    mongodb:
+#      uri: mongodb://localhost:27017/testdb
+      uri: mongodb://cicps:cicps@192.168.199.186:27017/cicpsdb
 mybatis:
   mapper-locations: classpath:mybatis/*Mapper.xml
 logging:

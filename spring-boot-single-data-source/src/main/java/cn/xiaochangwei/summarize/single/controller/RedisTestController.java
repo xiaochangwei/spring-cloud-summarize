@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 //import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration; //RedisAutoConfiguration已经默认实现了两个，满足日常使用了
 
@@ -27,6 +28,12 @@ public class RedisTestController {
 
     @Autowired
     RedisTemplate<Object, Object> redisTemplate;
+
+    @GetMapping("/key")
+    public Result key() {
+        Boolean result = stringRedisTemplate.opsForValue().setIfAbsent("key", "v1", 3, TimeUnit.SECONDS);
+        return Result.success(result);
+    }
 
     @GetMapping("/test")
     public Result redisTest() {
