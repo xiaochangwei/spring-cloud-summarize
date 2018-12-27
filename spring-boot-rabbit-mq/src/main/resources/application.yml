@@ -1,0 +1,14 @@
+server:
+  port: 3001
+spring:
+  rabbitmq:
+    host: 192.168.199.186
+    port: 5672
+    username: wis
+    password: 123456
+    virtual-host: /
+    listener:
+      direct:
+        acknowledge-mode: manual
+      simple:
+        acknowledge-mode: manual
