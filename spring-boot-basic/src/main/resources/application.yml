@@ -1,0 +1,21 @@
+server:
+  port: 2001
+
+
+interfaces:
+  #所有接口定义在一个文件中，如果过多会显得稍微混乱
+  mycnblogs: https://www.cnblogs.com/xiaochangwei
+  myCnblogsArticle001: ${interfaces.mycnblogs}/p/9988927.html
+  myCnblogsArticle002: ${interfaces.mycnblogs}/p/9539578.html
+  myGithub: https://github.com/xiaochangwei
+  myGithubArticle001: ${interfaces.myGithub}/spring-cloud-summarize
+  myGithubArticle002: ${interfaces.myGithub}/spring-cloud-config-repo
+  #按应用分开定义，结构比较清晰，但如果调用的服务太多，定义文件会有点多(一般不会太多)
+  cnblogs:
+    root: https://www.cnblogs.com/xiaochangwei
+    cnblogsArticle001: ${interfaces.cnblogs.root}/p/9988927.html
+    cnblogsArticle002: ${interfaces.cnblogs.root}/p/9539578.html
+  github:
+    root: https://github.com/xiaochangwei
+    githubArticle001: ${interfaces.github.root}/spring-cloud-summarize
+    githubArticle002: ${interfaces.github.root}/spring-cloud-config-repo

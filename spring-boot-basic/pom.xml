@@ -9,10 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-rabbit-mq</artifactId>
+    <artifactId>spring-boot-basic</artifactId>
     <packaging>war</packaging>
 
-    <name>spring-boot-rabbit-mq Maven Webapp</name>
+    <name>spring-boot-basic Maven Webapp</name>
+    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -41,10 +42,6 @@
             <groupId>cn.xiaochangwei.summarize</groupId>
             <artifactId>summarize-common-tools</artifactId>
             <version>2.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

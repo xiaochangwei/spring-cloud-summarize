@@ -15,6 +15,7 @@
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-config-server</module>
         <module>spring-boot-rabbit-mq</module>
+        <module>spring-boot-basic</module>
     </modules>
     <packaging>pom</packaging>
 

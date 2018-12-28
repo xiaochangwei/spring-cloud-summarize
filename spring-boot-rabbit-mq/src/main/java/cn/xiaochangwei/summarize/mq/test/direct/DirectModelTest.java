@@ -66,10 +66,10 @@ public class DirectModelTest {
     @RabbitListener(queues = {"directQueue1"})
     public void directQueue1Receiver(Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long deliveryTag, @Payload User user) throws IOException {
         System.out.println("directQueue1:" + JSON.toJSONString(user));
-        Random random = new Random();
-        if (random.nextInt(2) == 0) {
-            throw new BusinessException("0000000000000000000000000");
-        }
+//        Random random = new Random();
+//        if (random.nextInt(2) == 0) {
+//            throw new BusinessException("0000000000000000000000000");
+//        }
         channel.basicAck(deliveryTag, false);
     }
 
