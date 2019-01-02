@@ -50,10 +50,10 @@ public class FanoutModelTest {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
-//    @Scheduled(fixedRate = 1000)
-//    public void directProducer() {
-//        rabbitTemplate.convertAndSend("fanoutExchange", "", new User("fanout"));
-//    }
+    @Scheduled(fixedRate = 1000)
+    public void directProducer() {
+        rabbitTemplate.convertAndSend("fanoutExchange", "", new User("fanout"));
+    }
 
     @RabbitListener(queues = {"fanoutQueue1"})
     public void fanoutQueue1Receiver(Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long deliveryTag, @Payload User user) throws IOException {
