@@ -19,3 +19,21 @@ interfaces:
     root: https://github.com/xiaochangwei
     githubArticle001: ${interfaces.github.root}/spring-cloud-summarize
     githubArticle002: ${interfaces.github.root}/spring-cloud-config-repo
+logging:
+  config: classpath:logback-my.xml
+  level:
+    cn.xiaochangwei.summarize.basic.log.TraceTest: trace
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+#  pattern: d:/log
+#logging:
+#  file: D:/mylog.log
+#  level:
+#    root: info
+#  pattern:
+#    file: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+#    console: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+

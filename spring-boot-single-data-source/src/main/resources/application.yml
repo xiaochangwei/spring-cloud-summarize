@@ -3,6 +3,10 @@ server:
 #  servlet:
 #    context-path: /app1     #由于接入eureka，为了能直接从eureka列表直接点击跳转，取消context-path，以端口区分应用
 spring:
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=5,expireAfterWrite=10s
   application:
     name: app1
   jackson:
